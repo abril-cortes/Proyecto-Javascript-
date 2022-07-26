@@ -1,0 +1,78 @@
+.navbar {
+  min-width: 320px;
+  background-color: #fff;
+  height: 80px;
+  margin-left: 7px;
+  align-items: center;
+}
+.navbar .navbar-brand {
+  margin-left: 8px;
+}
+.navbar .navbar-brand img {
+  width: 24px;
+  height: 24px;
+}
+.navbar .navbar-nav {
+  align-items: center;
+}
+.navbar .navbar-nav #inicio {
+  font-size: 16px;
+  font-weight: 700;
+  /*margin-right: 10px;*/
+  color: #fff;
+  background-color: black;
+  border-radius: 30px;
+  padding: 12px 17px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.navbar .navbar-nav a {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-right: 15px;
+}
+.navbar .form_container input {
+  border: 0;
+  border-radius: 30px;
+  width: 100%;
+  height: 50px;
+  background-color: #efefef;
+  padding: 15px;
+}
+.navbar .form_container input:focus {
+  border: 0;
+  outline: none;
+}
+.navbar .form_container input::-moz-placeholder {
+  font-size: 16px;
+}
+.navbar .form_container input:-ms-input-placeholder {
+  font-size: 16px;
+}
+.navbar .form_container input::placeholder {
+  font-size: 16px;
+}
+.navbar .notifications_container {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+}
+.navbar .notifications_container img {
+  width: 25px;
+  height: auto;
+  margin: 0 15px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
