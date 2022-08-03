@@ -2,7 +2,8 @@ let mensaje = "";
 let productoSeleccionado;
 let cantidad;
 let precioTotal;
-let productos = [{
+// array de elementos cargados.
+const productos = [{
     id: 0,
     nombre: "Remera",
     valor: 1500
@@ -32,6 +33,9 @@ let productos = [{
     nombre: "Top",
     valor: 1200
 }];
+// array vacio para cargar nombres de elementos que el usuario necesite y no esten disponibles.
+/*const productosAgregados = [];*/
+let productoAgregado;
 
 function calcular() { 
     for (let i = 0; i < productos.length; i++) {
@@ -48,7 +52,9 @@ function calcular() {
     if (productoEncontrado) {
         precioTotal = alert("Precio total:" + " " + realizarCalculo(productoSeleccionado, cantidad));
     } else {
-        alert("Lo sentimos no hay stock de ese producto");
+        productoAgregado = prompt("Lo sentimos, no tenemos disponibilidad de ese producto aun. Ingrese el producto que desea inclui en nuestro catalogo: ");
+        agregarProducto();
+        
     }
 }
 
@@ -60,5 +66,12 @@ function realizarCalculo(productoSeleccionado, cantidad) {
         }
     }
     return productoAcalcular.valor * cantidad;
+}
+
+function agregarProducto() {
+    if (productoAgregado != "") {
+        productos.push(productoAgregado);
+        console.warn("Se ha agregado el producto: "  + productoAgregado + ", vamos a hacer lo posible para que este disponible pronto!");
+    }
 }
 calcular();
