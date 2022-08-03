@@ -21,6 +21,16 @@ let productos = [{
     id: 3,
     nombre: "Zapatillas", 
     valor: 10000
+}, 
+{
+    id: 4,
+    nombre: "Medias",
+    valor: 300
+}, 
+{
+    id: 5,
+    nombre: "Top",
+    valor: 1200
 }];
 
 function calcular() { 
