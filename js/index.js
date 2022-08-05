@@ -33,26 +33,25 @@ const productos = [{
     nombre: "Top",
     valor: 1200
 }];
-// array vacio para cargar nombres de elementos que el usuario necesite y no esten disponibles.
-/*const productosAgregados = [];*/
+
 let productoAgregado;
 
 function calcular() { 
-    for (let i = 0; i < productos.length; i++) {
-        mensaje+="\n" + productos[i].nombre + "(" + productos[i].id + ")";
-    };
+    productos.forEach((producto) => {
+        mensaje+="\n" + producto.nombre + "(" + producto.id + ")";
+    });
     productoSeleccionado = parseInt(prompt("Ingrese el id del producto que desea: " + mensaje));
     cantidad = parseInt(prompt("Ingrese la cantidad seleccionada de ese producto"));
     let productoEncontrado = false;
-    for (let i = 0; i < productos.length; i++) {
-        if (productos[i].id == productoSeleccionado) {
+    productos.forEach((producto) => {
+        if (producto.id == productoSeleccionado) {
             productoEncontrado = true;
         }
-    };
+    });
     if (productoEncontrado) {
         precioTotal = alert("Precio total:" + " " + realizarCalculo(productoSeleccionado, cantidad));
     } else {
-        productoAgregado = prompt("Lo sentimos, no tenemos disponibilidad de ese producto aun. Ingrese el producto que desea inclui en nuestro catalogo: ");
+        productoAgregado = prompt("Lo sentimos, no tenemos disponibilidad de ese producto aun. Ingrese el producto que desea incluir en nuestro catalogo: ");
         agregarProducto();
         
     }
@@ -60,11 +59,11 @@ function calcular() {
 
 function realizarCalculo(productoSeleccionado, cantidad) {
     let productoAcalcular;
-    for (let i = 0; i < productos.length; i++) {
-        if (productoSeleccionado == productos[i].id) {
-            productoAcalcular = productos[i];
+    productos.forEach((producto) => {
+        if (productoSeleccionado == producto.id) {
+            productoAcalcular = producto;
         }
-    }
+    });
     return productoAcalcular.valor * cantidad;
 }
 
