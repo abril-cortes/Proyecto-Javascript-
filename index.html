@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Crea tu propia coleccion de fotos personalizada!">
     <meta name="keywords" content="PINTEREST, FOTOS, AESTHETIC">
     <title>Pinterest</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="./assets/icons/favicon-54a5b2af.png" type="image/x-icon">
     <link rel="icon" href="./assets/icons/favicon-54a5b2af.png" type="image/x-icon">
-    <script src="js/index.js" defer></script>
     <script src="js/pinterest.js" defer></script>
- </head>
- <body>
-     <header>
+  </head>
+  <body>
+    <header>
          <nav class="navbar navbar-expand-lg fixed-top">
              <div class="container-fluid">
                  <a class="navbar-brand" href="index.html">
@@ -59,10 +58,77 @@
                  </div>
              </div>
          </nav>
-     </header>
-     <main>
+    </header>
+    <main id="contenedor-de-imagenes"> 
+       <div class="cuerpo-imagen">
+         <div class="imagen-y-fantasma">
+           <img src="https://images.unsplash.com/photo-1587502538004-e9ec84b491c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNDk4NTl8MXwxfHNlYXJjaHwxfHxvY2VhbnxlbnwwfHx8fDE2NTg4NTEwMDQ&ixlib=rb-1.2.1&q=80&w=1080" alt="woman in black jacket and blue denim jeans standing on green grass field near body of on on on with">
+           <div id="fantasma">
+             <div class="boton">
+               <button><p>Guardar</p></button>
+             </div>
+             <div class="likes"><p>1000 ❤️</p></div>
+           </div>
+         </div>
+         <div class="cuerpo-usuario">
+             <div>
+               <p>Woman in black jacket and blue denim jeans standing on green grass field near body of on on on with</p>
+             </div>
+             <div class="imagen-usuario">
+               <img src="https://images.unsplash.com/profile-1557251674406-effb9d313841?ixlib=rb-1.2.1&crop=faces&fit=crop&w=64&h=64" alt="user profile picture">
+               <div>
+                 <a href="https://unsplash.com/@boxedwater">boxedwater</a>
+               </div>
+             </div>
+           </div>      
+        </div>
 
-     </main>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
- </body>
+        <div class="cuerpo-imagen">
+          <div class="imagen-y-fantasma">
+            <img src="https://images.unsplash.com/photo-1488188840666-e2308741a62f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNDk4NTl8MHwxfHNlYXJjaHwyfHxvY2VhbnxlbnwwfHx8fDE2NTg4NTEwMDQ&ixlib=rb-1.2.1&q=80&w=1080" alt="blue body of water">
+            <div id="fantasma">
+              <div class="boton">
+                <button><p>Guardar</p></button>
+              </div>
+              <div class="likes"><p>1500 ❤️</p></div>
+            </div>
+          </div>
+          <div class="cuerpo-usuario">
+              <div>
+                <p>Sunrise in Greece</p>
+              </div>
+              <div class="imagen-usuario">
+                <img src="https://images.unsplash.com/profile-1505668458285-638bd18ec9d8?ixlib=rb-1.2.1&crop=faces&fit=crop&w=64&h=64">
+                <div>
+                  <a href="https://unsplash.com/@thenata">thenata</a>
+                </div>
+              </div>
+            </div>      
+         </div>
+
+         <div class="cuerpo-imagen">
+          <div class="imagen-y-fantasma">
+            <img src="https://images.unsplash.com/photo-1513553404607-988bf2703777?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNDk4NTl8MHwxfHNlYXJjaHwzfHxvY2VhbnxlbnwwfHx8fDE2NTg4NTEwMDQ&ixlib=rb-1.2.1&q=80&w=1080" alt="iPhone wallpaper">
+            <div id="fantasma">
+              <div class="boton">
+                <button><p>Guardar</p></button>
+              </div>
+              <div class="likes"><p>500 ❤️</p></div>
+            </div>
+          </div>
+          <div class="cuerpo-usuario">
+              <div>
+                <p>Ocean</p>
+              </div>
+              <div class="imagen-usuario">
+                <img src="https://images.unsplash.com/profile-1513922969232-e5d2c83bfb08?ixlib=rb-1.2.1&crop=faces&fit=crop&w=64&h=64">
+                <div>
+                  <a href="https://unsplash.com/@joelvodell">joelvodell</a>
+                </div>
+              </div>
+            </div>      
+         </div>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
 </html>
