@@ -1,74 +1,85 @@
 .navbar {
   min-width: 320px;
-  background-color: #fff;
+  background-color: black;
   height: 80px;
-  margin-left: 7px;
   align-items: center;
 }
-.navbar .navbar-brand {
+.navbar .container-fluid {
+  background-color: black;
+}
+.navbar .container-fluid .navbar-brand {
   margin-left: 8px;
 }
-.navbar .navbar-brand img {
-  width: 24px;
-  height: 24px;
+.navbar .container-fluid .navbar-brand img {
+  width: 30px;
+  height: 30px;
 }
-.navbar .navbar-nav {
+.navbar .container-fluid .navbar-nav {
   align-items: center;
 }
-.navbar .navbar-nav #inicio {
+.navbar .container-fluid .navbar-nav #inicio {
   font-size: 16px;
   font-weight: 700;
   /*margin-right: 10px;*/
-  color: #fff;
-  background-color: black;
+  color: black;
+  background-color: #06FF00;
   border-radius: 30px;
   padding: 12px 17px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-.navbar .navbar-nav a {
+.navbar .container-fluid .navbar-nav a {
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: white;
   margin-right: 15px;
 }
-.navbar .form_container input {
+.navbar .container-fluid .form_container input {
   border: 0;
   border-radius: 30px;
   width: 100%;
   height: 50px;
-  background-color: #efefef;
+  background-color: #06FF00;
   padding: 15px;
+  box-shadow: 0 1px 1px 1px #134d12;
 }
-.navbar .form_container input:focus {
+.navbar .container-fluid .form_container input:focus {
   border: 0;
   outline: none;
 }
-.navbar .form_container input::-moz-placeholder {
+.navbar .container-fluid .form_container input::-moz-placeholder {
   font-size: 16px;
+  color: black;
+  font-weight: 500;
 }
-.navbar .form_container input:-ms-input-placeholder {
+.navbar .container-fluid .form_container input:-ms-input-placeholder {
   font-size: 16px;
+  color: black;
+  font-weight: 500;
 }
-.navbar .form_container input::placeholder {
+.navbar .container-fluid .form_container input::placeholder {
   font-size: 16px;
+  color: black;
+  font-weight: 500;
 }
-.navbar .notifications_container {
+.navbar .container-fluid .notifications_container {
   display: flex;
   justify-content: center;
   margin: 0 10px;
 }
-.navbar .notifications_container img {
+.navbar .container-fluid .notifications_container img {
   width: 25px;
   height: auto;
   margin: 0 15px;
 }
 
 #contenedor-de-imagenes {
+  background-color: black;
   margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 #contenedor-de-imagenes .cuerpo-imagen {
   display: flex;
@@ -102,7 +113,7 @@
   margin: 10px;
 }
 #contenedor-de-imagenes .cuerpo-imagen div.imagen-y-fantasma #fantasma .boton button {
-  background-color: red;
+  background-color: black;
   border: 0;
   border-radius: 25px;
   width: -webkit-fit-content;
@@ -111,7 +122,7 @@
 }
 #contenedor-de-imagenes .cuerpo-imagen div.imagen-y-fantasma #fantasma .boton button p {
   margin: 10px 15px;
-  color: white;
+  color: #06FF00;
   font-weight: 500;
   font-size: 15px;
 }
@@ -119,25 +130,26 @@
   margin: 0 10px;
 }
 #contenedor-de-imagenes .cuerpo-imagen div.imagen-y-fantasma #fantasma .likes p {
-  color: white;
-  font-size: 14px;
-  font-weight: 400;
-}
-#contenedor-de-imagenes .cuerpo-usuario div {
-  margin-top: 10px;
-}
-#contenedor-de-imagenes .cuerpo-usuario div p {
   color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+#contenedor-de-imagenes .cuerpo-usuario {
+  margin: 10px 10px;
+}
+#contenedor-de-imagenes .cuerpo-usuario p {
+  color: white;
   font-weight: 500;
   font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0;
-  margin-left: 5px;
 }
 #contenedor-de-imagenes .cuerpo-usuario .imagen-usuario {
   display: flex;
+  margin-top: 10px;
+  justify-content: flex-start;
 }
 #contenedor-de-imagenes .cuerpo-usuario .imagen-usuario img {
   width: 40px;
@@ -145,12 +157,14 @@
   margin-right: 5px;
   border-radius: 100%;
 }
-#contenedor-de-imagenes .cuerpo-usuario .imagen-usuario div a {
-  color: black;
+#contenedor-de-imagenes .cuerpo-usuario .imagen-usuario a {
+  color: white;
   text-decoration: none;
   font-size: 14px;
+  margin-left: 5px;
+  align-self: center;
 }
-#contenedor-de-imagenes .cuerpo-usuario .imagen-usuario div a:hover {
+#contenedor-de-imagenes .cuerpo-usuario .imagen-usuario a:hover {
   text-decoration: underline;
 }
 
@@ -160,8 +174,11 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: black;
+}
+
 body {
-  background-color: #fff;
   height: auto;
   width: 100%;
 }/*# sourceMappingURL=style.css.map */

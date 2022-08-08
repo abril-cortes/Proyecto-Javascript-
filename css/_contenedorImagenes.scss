@@ -1,7 +1,9 @@
 #contenedor-de-imagenes {
+    background-color: black;
     margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     .cuerpo-imagen {
        display: flex;
        flex-direction: column;
@@ -30,13 +32,13 @@
             .boton {
                 margin: 10px;
                 button {
-                    background-color: red;
+                    background-color: black;
                     border: 0;
                     border-radius: 25px;
                     width: fit-content;
                     p {
                         margin: 10px 15px;
-                        color: white;
+                        color: #06FF00;
                         font-weight: 500;
                         font-size: 15px;
                     }
@@ -45,9 +47,9 @@
             .likes {
                 margin: 0 10px;
                 p {
-                    color: white;
+                    color: black;
                     font-size: 14px;
-                    font-weight: 400;
+                    font-weight: 500;
                 }
             }
         }
@@ -55,37 +57,36 @@
         
     }
     .cuerpo-usuario {
-        div {
-            margin-top: 10px;
+        margin: 10px 10px;
             p {
-                color: black;
+                color: white;
                 font-weight: 500;
                 font-size: 15px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 margin-bottom: 0;
-                margin-left: 5px;
             }
-        }
         .imagen-usuario {
             display: flex;
+            margin-top: 10px;
+            justify-content: flex-start;
             img {
               width: 40px;
               height: 40px;
               margin-right: 5px;
               border-radius: 100%;
            }
-           div {
             a {
-                color: black;
+                color: white;
                 text-decoration: none;
                 font-size: 14px;
+                margin-left: 5px;
+                align-self: center;
                 &:hover {
                     text-decoration: underline;
                 }
             }
-           }
         }
     }
 }

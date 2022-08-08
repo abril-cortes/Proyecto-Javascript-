@@ -6,9 +6,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+html {
+    background-color: black;
+}
 body {
-    background-color: #fff;
     height: auto;
     width: 100%;
 }

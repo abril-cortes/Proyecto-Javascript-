@@ -1,60 +1,65 @@
-.navbar{
+ .navbar{
     min-width: 320px;
-    background-color: #fff;
+    background-color: black;
     height: 80px;
-    margin-left: 7px;
     align-items: center;
-    .navbar-brand {
+    .container-fluid {
+        background-color: black;
+       .navbar-brand {
         margin-left: 8px;
-        img {
-            width: 24px;
-            height: 24px;
-        }
+          img {
+              width: 30px;
+              height: 30px;
+           }
+       }
+     .navbar-nav {
+         align-items: center;
+         #inicio {
+             font-size: 16px;
+             font-weight: 700;
+             /*margin-right: 10px;*/
+             color: black;
+             background-color: #06FF00;
+             border-radius: 30px;
+             padding: 12px 17px;
+             width: fit-content;
+           }
+         a {
+             font-size: 16px;
+             font-weight: 500;
+             color: white;
+             margin-right: 15px;
+           }
+       }
+     .form_container {
+         input {
+             border: 0;
+             border-radius: 30px;
+             width: 100%;
+             height: 50px;
+             background-color: #06FF00; 
+             padding: 15px;
+             box-shadow:  0 1px 1px 1px #134d12;
+             &:focus {
+                 border: 0;
+                 outline: none;
+               }
+             &::placeholder {
+                 font-size: 16px;
+                 color: black;
+                 font-weight: 500;
+               }
+           }
+       }
+     .notifications_container {
+         display: flex;
+         justify-content: center;
+         margin: 0 10px;
+         img {
+             width: 25px;
+             height: auto;
+             margin: 0 15px;
+           }
+       } 
     }
-    .navbar-nav {
-        align-items: center;
-        #inicio {
-            font-size: 16px;
-            font-weight: 700;
-            /*margin-right: 10px;*/
-            color: #fff;
-            background-color: black;
-            border-radius: 30px;
-            padding: 12px 17px;
-            width: fit-content;
-        }
-        a {
-            font-size: 16px;
-            font-weight: 500;
-            color: black;
-            margin-right: 15px;
-        }
-    }
-    .form_container {
-        input {
-            border: 0;
-            border-radius: 30px;
-            width: 100%;
-            height: 50px;
-            background-color: #efefef; 
-            padding: 15px;
-            &:focus {
-                border: 0;
-                outline: none;
-            }
-            &::placeholder {
-                font-size: 16px;
-            }
-        }
-    }
-    .notifications_container {
-        display: flex;
-        justify-content: center;
-        margin: 0 10px;
-        img {
-            width: 25px;
-            height: auto;
-            margin: 0 15px;
-        }
-  }
 }
