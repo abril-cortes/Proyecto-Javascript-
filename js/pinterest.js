@@ -1,14 +1,6 @@
- let responseClone;
- fetch("../assets/icons/photos.json").then((respuesta) => { 
-    responseClone = respuesta.clone()
-    return respuesta.json()
-    }).then((fotosRespuesta) => {
-     mostrarImagenes(fotosRespuesta)
- }, (error)=> {
-    console.log(responseClone);
-    console.log(error);
-    responseClone.text().then((texto)=> console.log(texto));
- });
+fetch("../assets/photos.json").then((respuesta) => respuesta.json()).then((fotosRespuesta) => {
+    mostrarImagenes(fotosRespuesta)
+});
 
 let mensaje = "";
 let productoSeleccionado;
