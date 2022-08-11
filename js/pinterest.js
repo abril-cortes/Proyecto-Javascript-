@@ -6,19 +6,6 @@ let mensaje = "";
 let productoSeleccionado;
 let cantidad;
 let precioTotal;
-// array de elementos cargados.
-
-// function Producto(nombre, valor) {
-//     this.id = Math.random(1, 20);
-//     this.nombre = nombre;
-//     this.valor = valor;
-//     this.dameTotal = (cantidad) => cantidad * valor; 
-// }
-
-// const baby = new Producto("Lourdes", 1000);
-// console.log(baby.dameTotal(999))
-
-
    
 const productos = [{
     id: 0,
@@ -91,16 +78,16 @@ function agregarProducto(nombre, valor) {
 }
 //calcular();
 
-const contenedorDeImagenes = document.getElementById("contenedor-de-imagenes");
+
 //const nuevoParrafo = document.createElement('p');
-contenedorDeImagenes.className = "soy una clase dinamica"
-contenedorDeImagenes.innerText;
+// contenedorDeImagenes.className = "soy una clase dinamica"
+// contenedorDeImagenes.innerText;
 //contenedorDeImagenes.style = "color: red";
 //contenedorDeImagenes.appendChild(nuevoParrafo);
 
 function mostrarImagenes(fotos) {
+    const contenedorDeImagenes = document.getElementById("contenedor-de-imagenes");
     fotos.forEach((foto) => {
-        console.log(foto)
         const cuerpoImagen = document.createElement("div");
         const imagenYFantasma = document.createElement("div");
         const cuerpoUsuario = document.createElement("div");

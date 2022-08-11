@@ -86,6 +86,7 @@
   flex-direction: column;
   width: 300px;
   margin: 10px;
+  height: auto;
 }
 #contenedor-de-imagenes .cuerpo-imagen div.imagen-y-fantasma {
   position: relative;
