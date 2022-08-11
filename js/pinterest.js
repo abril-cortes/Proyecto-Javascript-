@@ -1,13 +1,14 @@
- fetch("../assets/icons/photos.json").then((respuesta) => respuesta.json()).then((fotosRespuesta) => {
+ let responseClone;
+ fetch("../assets/icons/photos.json").then((respuesta) => { 
+    responseClone = respuesta.clone()
+    return respuesta.json()
+    }).then((fotosRespuesta) => {
      mostrarImagenes(fotosRespuesta)
+ }, (error)=> {
+    console.log(responseClone);
+    console.log(error);
+    responseClone.text().then((texto)=> console.log(texto));
  });
- fetch('https://jsonplaceholder.typicode.com/posts')
- .then( (resp) => resp.json() )
- .then( (data) => {
-     console.log( data[0].title )
-     console.log( data[0].body )
- })
-
 
 let mensaje = "";
 let productoSeleccionado;
