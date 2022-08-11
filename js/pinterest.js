@@ -1,6 +1,13 @@
-fetch("../assets/icons/photos.json").then((respuesta) => respuesta.json()).then((fotosRespuesta) => {
-    mostrarImagenes(fotosRespuesta)
-});
+ fetch("../assets/icons/photos.json").then((respuesta) => respuesta.json()).then((fotosRespuesta) => {
+     mostrarImagenes(fotosRespuesta)
+ });
+ fetch('https://jsonplaceholder.typicode.com/posts')
+ .then( (resp) => resp.json() )
+ .then( (data) => {
+     console.log( data[0].title )
+     console.log( data[0].body )
+ })
+
 
 let mensaje = "";
 let productoSeleccionado;
