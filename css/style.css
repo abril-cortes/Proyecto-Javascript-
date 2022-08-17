@@ -33,7 +33,11 @@
   font-size: 16px;
   font-weight: 500;
   color: white;
+  background-color: black;
   margin-right: 15px;
+}
+.navbar .container-fluid .navbar-nav ul {
+  background-color: black;
 }
 .navbar .container-fluid .form_container input {
   border: 0;

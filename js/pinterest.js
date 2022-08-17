@@ -2,88 +2,19 @@ fetch("../assets/photos.json").then((respuesta) => respuesta.json()).then((fotos
     mostrarImagenes(fotosRespuesta)
 });
 
-let mensaje = "";
-let productoSeleccionado;
-let cantidad;
-let precioTotal;
-   
-const productos = [{
-    id: 0,
-    nombre: "Imagen Standard",
-    valor: 1500
-},
-{
-    id: 1,
-    nombre: "Imagen HD",
-    valor: 3000
-}, 
-{
-    id: 2,
-    nombre: "Imagen 4K",
-    valor: 500
-}, 
-{
-    id: 3,
-    nombre: "Imagen 8K", 
-    valor: 10000
-}, 
-{
-    id: 4,
-    nombre: "Video Standard",
-    valor: 300
-}, 
-{
-    id: 5,
-    nombre: "Video HD",
-    valor: 1200
-}];
-
-function calcular() { 
-    productos.forEach((producto) => {
-        mensaje+="\n" + producto.nombre + "(" + producto.id + ")";
-    });
-    productoSeleccionado = parseInt(prompt("Ingrese el id del formato de foto o video que desea: " + mensaje));
-    cantidad = parseInt(prompt("Ingrese la cantidad: "));
-    let productoEncontrado = false;
-    productos.forEach((producto) => {
-        if (producto.id == productoSeleccionado) {
-            productoEncontrado = true;
-        }
-    });
-    if (productoEncontrado) {
-        precioTotal = alert("Precio total:" + " " + realizarCalculo(productoSeleccionado, cantidad));
-    } else {
-        const productoAgregado = prompt("Lo sentimos, no tenemos ese formato todavía, ingréselo para agregarlo al catálogo próximamente ");
-        const costoDelNuevoProducto = prompt("Cuanto quisieras que cueste este producto?");
-        agregarProducto(productoAgregado, costoDelNuevoProducto);
-        
+let fotosGuardadas = JSON.parse(localStorage.getItem("colecciones"));
+function guardarAColeccion(e, f) {
+    
+    if (!fotosGuardadas) {
+       localStorage.setItem("colecciones", JSON.stringify([]));
+       fotosGuardadas = JSON.parse(localStorage.getItem("colecciones"));
     }
-}
-
-function realizarCalculo(productoSeleccionado, cantidad) {
-    let productoAcalcular;
-    productos.forEach((producto) => {
-        if (productoSeleccionado == producto.id) {
-            productoAcalcular = producto;
-        }
-    });
-    return productoAcalcular.valor * cantidad;
-}
-
-function agregarProducto(nombre, valor) {
-    if (nombre != "") {
-        productos.push({nombre: nombre, valor: valor});
-        console.warn("Se ha agregado el formato: "  + nombre + ", vamos a hacer lo posible para que este disponible pronto! y que cueste " + valor);
+    const fotoDuplicada = fotosGuardadas.find((foto) => foto.id == f.id);
+    if (!fotoDuplicada) {
+        fotosGuardadas.push(f);
     }
+    localStorage.setItem("colecciones", JSON.stringify(fotosGuardadas));
 }
-//calcular();
-
-
-//const nuevoParrafo = document.createElement('p');
-// contenedorDeImagenes.className = "soy una clase dinamica"
-// contenedorDeImagenes.innerText;
-//contenedorDeImagenes.style = "color: red";
-//contenedorDeImagenes.appendChild(nuevoParrafo);
 
 function mostrarImagenes(fotos) {
     const contenedorDeImagenes = document.getElementById("contenedor-de-imagenes");
@@ -119,7 +50,7 @@ function mostrarImagenes(fotos) {
         textoBoton.innerText = "Guardar";
         cuerpoUsuario.className = "cuerpo-usuario";
 
-
+        botonGuardar.addEventListener("click", (e) => guardarAColeccion(e, foto))
         contenedorImagenUsuario.appendChild(imagenUsuario);
         contenedorImagenUsuario.appendChild(nombreUsuario);
         cuerpoUsuario.appendChild(descripcion);
@@ -134,7 +65,7 @@ function mostrarImagenes(fotos) {
         cuerpoImagen.appendChild(imagenYFantasma);
         cuerpoImagen.appendChild(cuerpoUsuario);
         contenedorDeImagenes.appendChild(cuerpoImagen);
-    
+
     })
 }
 
