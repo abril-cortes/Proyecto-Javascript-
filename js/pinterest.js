@@ -21,7 +21,6 @@ function mostrarImagenes(fotos) {
     fotos.forEach((foto) => {
         const cuerpoImagen = document.createElement("div");
         const imagenYFantasma = document.createElement("div");
-        const cuerpoUsuario = document.createElement("div");
         const imagen = document.createElement("img");
         const fantasma = document.createElement("div");
         const contenedorDeBoton = document.createElement("div");
@@ -29,40 +28,43 @@ function mostrarImagenes(fotos) {
         const textoBoton = document.createElement("p");
         const contenedorLikes = document.createElement("div");
         const likes = document.createElement("p");
+        const cuerpoUsuario = document.createElement("div");
         const descripcion = document.createElement("p");
         const contenedorImagenUsuario = document.createElement("div");
         const imagenUsuario = document.createElement("img");
         const nombreUsuario = document.createElement("a");
         
-        nombreUsuario.href = foto.user.links.html;
-        nombreUsuario.innerText = foto.user.username;
-        imagenUsuario.src = foto.user.profile_image.medium;
-        likes.innerText = foto.likes + " 💚";
-        descripcion.innerText = foto.alt_description;
-        contenedorImagenUsuario.className = "imagen-usuario";
-        contenedorLikes.className = "likes";
-        cuerpoImagen.className = "cuerpo-imagen";
-        imagenYFantasma.className = "imagen-y-fantasma";
-        imagen.src = foto.urls.regular;
-        imagen.alt = foto.alt_description;
-        fantasma.id = "fantasma";
-        contenedorDeBoton.className = "boton";
-        textoBoton.innerText = "Guardar";
-        cuerpoUsuario.className = "cuerpo-usuario";
 
-        botonGuardar.addEventListener("click", (e) => guardarAColeccion(e, foto))
-        contenedorImagenUsuario.appendChild(imagenUsuario);
-        contenedorImagenUsuario.appendChild(nombreUsuario);
-        cuerpoUsuario.appendChild(descripcion);
-        cuerpoUsuario.appendChild(contenedorImagenUsuario);
-        contenedorLikes.appendChild(likes);
-        fantasma.appendChild(contenedorDeBoton);
-        fantasma.appendChild(contenedorLikes);
+        nombreUsuario.innerText = foto.user.username;
+        nombreUsuario.href = foto.user.links.html;
+        imagenUsuario.src = foto.user.profile_image.medium;
+        contenedorImagenUsuario.className = "imagen-usuario";
+        descripcion.innerText = foto.alt_description;
+        cuerpoUsuario.className = "cuerpo-usuario";
+        likes.innerText = foto.likes + " 💚";
+        contenedorLikes.className = "likes";
+        textoBoton.innerText = "Guardar";
+        contenedorDeBoton.className = "boton";
+        fantasma.id = "fantasma";
+        imagen.alt = foto.alt_description;
+        imagen.src = foto.urls.regular;
+        imagenYFantasma.className = "imagen-y-fantasma";
+        cuerpoImagen.className = "cuerpo-imagen";
+
+
+        botonGuardar.addEventListener("click", (e) => guardarAColeccion(e, foto));
+        imagenYFantasma.appendChild(imagen);
         botonGuardar.appendChild(textoBoton);
         contenedorDeBoton.appendChild(botonGuardar);
-        imagenYFantasma.appendChild(imagen);
+        fantasma.appendChild(contenedorDeBoton);
+        contenedorLikes.appendChild(likes);
+        fantasma.appendChild(contenedorLikes);
         imagenYFantasma.appendChild(fantasma);
         cuerpoImagen.appendChild(imagenYFantasma);
+        cuerpoUsuario.appendChild(descripcion);
+        contenedorImagenUsuario.appendChild(imagenUsuario);
+        contenedorImagenUsuario.appendChild(nombreUsuario);
+        cuerpoUsuario.appendChild(contenedorImagenUsuario);
         cuerpoImagen.appendChild(cuerpoUsuario);
         contenedorDeImagenes.appendChild(cuerpoImagen);
 
