@@ -55,14 +55,15 @@
                }
            }
        }
-     .notifications_container {
+     .usuario {
          display: flex;
          justify-content: center;
          margin: 0 10px;
          img {
-             width: 25px;
-             height: auto;
+             width: 30px;
+             height: 30px;
              margin: 0 15px;
+             border-radius: 50%;
            }
        } 
     }

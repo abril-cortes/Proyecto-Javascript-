@@ -1,5 +1,6 @@
 @import "nav";
 @import "contenedorImagenes";
+@import "perfil";
 
 * {
     padding: 0;
@@ -12,4 +13,7 @@ html {
 body {
     height: auto;
     width: 100%;
+}
+main {
+    background-color: black;
 }
