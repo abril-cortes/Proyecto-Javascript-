@@ -13,7 +13,7 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script defer src=""></script>
+    <script defer src="../js/perfil.js"></script>
   </head>
   <body>
     <header>
@@ -29,7 +29,7 @@
                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav me-auto">
                          <li class="nav-item dropdown">
-                             <a id="inicio" class="nav-link active" href="../index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <a id="inicio" class="nav-link active" href="../index.html" id="navbarDropdown" aria-expanded="false">
                              Inicio</a>
                          </li>
                          <li class="nav-item">
@@ -87,6 +87,27 @@
                  <a href="#">Guardados</a>
              </div>
           </div>
+       </div>
+       <div class="botones">
+         <button><img src="../assets/icons/icons8-mesa-de-mezclas-(vertical)-30.png" alt=""></button>
+         <button class="agregar"><img src="../assets/icons/icons8-más-2-matemáticas-48 (1).png" alt=""></button>
+       </div>
+       <div class="contenedor-de-modal" id="modal-tablero">
+        <div class="modal-de-abril">
+            <div class="boton-cerrar-contenedor">
+                <a id="cerrar" href="#"><img src="../assets/icons/icons8-eliminar-24.png" alt=""></a>
+            </div>
+            <div class="titulo">
+                <p>Crear Tablero</p>
+            </div>
+            <div class="nombre">
+                <label for="nombre">Nombre</label>
+                <input id="input-texto-tablero" type="text" placeholder="Nombre de tablero">
+            </div>
+            <div class="contenedor-boton">
+                <button class="crear">Crear</button>
+            </div>
+        </div>
        </div>
        <div id="pins-container">
 
