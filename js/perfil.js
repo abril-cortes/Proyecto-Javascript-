@@ -37,9 +37,9 @@ botonCrear.addEventListener("click", () => {
 })
 
 // FUNCION TABLEROS EN HTML
- const tableros = JSON.parse(localStorage.getItem("colecciones"));
+ 
 function mostrarTableros() {
-   
+   const tableros = JSON.parse(localStorage.getItem("colecciones"));
     const pinsContainer = document.getElementById("pins-container");
     pinsContainer.innerText = "";
     tableros.forEach(tablero => {
