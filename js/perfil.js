@@ -18,22 +18,32 @@ let coleccionesGuardadas = JSON.parse(localStorage.getItem("colecciones"));
 const botonCrear = document.querySelector(".crear");
 botonCrear.addEventListener("click", () => {
     const inputTextoTablero = document.querySelector("#input-texto-tablero");
-
     if (!coleccionesGuardadas) {
         localStorage.setItem("colecciones", JSON.stringify([]));
         coleccionesGuardadas = JSON.parse(localStorage.getItem("colecciones"));
-     }
-     const coleccionDuplicada = coleccionesGuardadas.find((tablero) => tablero.nombre == inputTextoTablero.value);
-     if (!coleccionDuplicada) {
-         coleccionesGuardadas.push({
+    }
+    // Guardamos en coleccion duplicada si hay algun tablero con el mismo nombre
+    const coleccionDuplicada = coleccionesGuardadas.find((tablero) => tablero.nombre == inputTextoTablero.value);
+
+    // Validamos si se intenta guardar un tablero sin nombre y despues si coleccion duplicada es verdadera se avisa que ya existe, si es falso guarda el tablero
+    const tableroVacio = inputTextoTablero.value == "" 
+         ? alert("ingresa un nombre para crear un tablero")
+         : (!coleccionDuplicada) 
+            ? coleccionesGuardadas.push({
             nombre: inputTextoTablero.value,
-            pines: []
-         });
-     }
-     localStorage.setItem("colecciones", JSON.stringify(coleccionesGuardadas));
-     contenedorModal.classList.remove("mostrar");
-     inputTextoTablero.value = "";
-     mostrarTableros();
+            pines: []})
+            : console.warn("ese tablero ya existe")
+
+    // if (!coleccionDuplicada) {
+    //     coleccionesGuardadas.push({
+    //         nombre: inputTextoTablero.value,
+    //         pines: []
+    //      });
+    // }
+    localStorage.setItem("colecciones", JSON.stringify(coleccionesGuardadas));
+    contenedorModal.classList.remove("mostrar");
+    inputTextoTablero.value = "";
+    mostrarTableros();
 })
 
 // FUNCION TABLEROS EN HTML

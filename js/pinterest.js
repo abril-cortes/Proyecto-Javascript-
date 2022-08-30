@@ -42,9 +42,11 @@ function abrirModalGuardar(e, foto) {
 // FUNCION GUARDAR FOTO A TABLERO
 function guardarAColeccion(f, nombre) {
     const fotoDuplicada = coleccionesGuardadas.find((coleccion) => coleccion.nombre == nombre)?.pines.find((foto) => foto.id == f.id);
-    if (!fotoDuplicada) {
-        coleccionesGuardadas.find((coleccion) => coleccion.nombre == nombre).pines.push(f);
-    }
+    // if (!fotoDuplicada) {
+    //     coleccionesGuardadas.find((coleccion) => coleccion.nombre == nombre).pines.push(f);
+    // }
+    // OP AND
+    !fotoDuplicada == true && coleccionesGuardadas.find((coleccion) => coleccion.nombre == nombre).pines.push(f);
     localStorage.setItem("colecciones", JSON.stringify(coleccionesGuardadas));
     contenedorModal.classList.remove("mostrar");
 }
@@ -101,7 +103,6 @@ function mostrarImagenes(fotos) {
         cuerpoUsuario.appendChild(contenedorImagenUsuario);
         cuerpoImagen.appendChild(cuerpoUsuario);
         contenedorDeImagenes.appendChild(cuerpoImagen);
-
     });
 }
 
