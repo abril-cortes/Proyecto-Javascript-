@@ -64,22 +64,35 @@ botonCrear.addEventListener("click", () => {
 })
 
 // FUNCION TABLEROS EN HTML
+
  
 function mostrarTableros() {
-   const tableros = JSON.parse(localStorage.getItem("colecciones"));
+   let tableros = JSON.parse(localStorage.getItem("colecciones"));
     const pinsContainer = document.getElementById("pins-container");
     pinsContainer.innerText = "";
     tableros.forEach(tablero => {
         const divTablero = document.createElement("div");
+        const enlacePines = document.createElement("a");
         divTablero.innerText = tablero.nombre;
         divTablero.className = "div-tablero";
+        enlacePines.href = "/html/pins.html"
         const numPines = document.createElement("p");
         numPines.className = "numero-pines";
         numPines.innerText = `${tablero.pines?.length} Pines`;
 
+        divTablero.appendChild(enlacePines);
         divTablero.appendChild(numPines);
         pinsContainer.appendChild(divTablero);
+
+        divTablero.addEventListener("click", () => {
+            const info = tablero;
+            console.log(info);
+            let tableroInfo = localStorage.setItem("tablero", JSON.stringify(info));
+            location.href = "http://127.0.0.1:5500/html/pins.html"
+            
+        });
     });
+    tableros = JSON.parse(localStorage.getItem("colecciones"));
 }
 mostrarTableros();
 

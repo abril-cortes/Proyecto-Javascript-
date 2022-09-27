@@ -1,4 +1,4 @@
-fetch("../assets/photos.json").then((respuesta) => respuesta.json()).then((fotosRespuesta) => {
+fetch("./assets/photos.json").then((respuesta) => respuesta.json()).then((fotosRespuesta) => {
     mostrarImagenes(fotosRespuesta)
 });
 
